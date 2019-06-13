@@ -1,7 +1,9 @@
 package com.testesw.br.projetodemo.service;
 
 import java.util.Arrays;
+
 import java.util.List;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -24,13 +26,22 @@ public class SwapiService {
 	public List<Planet> getPlanets(String id) throws Exception {
 		System.out.println("Buscando planetas.");
 		
+		
+		
 		String response = restTemplate.getForObject(endpoint + "/planets", String.class);
 		System.out.println("SWAPI Response: " + response);
 		
 		ResponseEntity<Planet> planet = restTemplate.getForEntity(endpoint + "/planets/" + id , Planet.class);
-		System.out.println("planeta 1 ==== " + new ObjectMapper().writeValueAsString(planet.getBody()));
+		System.out.println("PlanetaS ==== " + new ObjectMapper().writeValueAsString(planet.getBody()));
+		
 		
 		
 		return Arrays.asList(planet.getBody());
+	}
+
+	public Object getStarWorsEntity(String nome) {
+
+		
+		return null;
 	}
 }
