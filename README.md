@@ -2,7 +2,7 @@
 
 Projeto feito no Spring Boot STS
 Maven
-Jva 8
+Java 8
 
 Requisição da api externa feita: https://swapi.co/api/
 Metódo GET "/planets/{id}"
