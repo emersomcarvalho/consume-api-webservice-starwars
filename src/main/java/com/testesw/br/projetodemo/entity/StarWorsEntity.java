@@ -5,7 +5,8 @@ public class StarWorsEntity {
 
 	private String id;
 	private String nome;
-	private String clima; 								//add clima e terreno
+	//add clima e terreno
+	private String clima; 							
 	private String terreno;
 	
 	
