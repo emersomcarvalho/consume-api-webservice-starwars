@@ -9,9 +9,8 @@ import com.testesw.br.projetodemo.entity.StarWorsEntity;
 public interface Repository extends MongoRepository<StarWorsEntity, Long>{
 
 	
-	StarWorsEntity findOne(Long id);
+	StarWorsEntity findBy(Long id);
 
-	//StarWorsEntity findAll(Long id);
 
 
 }

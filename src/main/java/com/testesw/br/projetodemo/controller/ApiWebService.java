@@ -3,8 +3,8 @@ package com.testesw.br.projetodemo.controller;
 
 import java.util.List;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -18,7 +18,7 @@ import com.testesw.br.projetodemo.repository.Repository;
 import com.testesw.br.projetodemo.service.SwapiService;
 
 @RestController
-//@RequestMapping("/contato")
+@RequestMapping("/contato")
 public class ApiWebService {
 	
 	@Autowired
@@ -28,7 +28,7 @@ public class ApiWebService {
 	private Repository repository;
 	
     
-    @RequestMapping(value = "/planets/{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "/planets/{id}", method = RequestMethod.GET) // buscar swaip por is
     public Object getPlanets(@PathVariable("id") String id) throws Exception {
     	return swapiService.getPlanets(id);
     }
@@ -45,7 +45,7 @@ public class ApiWebService {
 
         @RequestMapping(value = "/{id}", method = RequestMethod.PUT)				//add busca por id
         public ResponseEntity<StarWorsEntity> buscar(@PathVariable Long id){
-        	StarWorsEntity contact = repository.findOne(id);
+        	StarWorsEntity contact = repository.findBy(id);
         	
         	if ( contact == null) {
         		

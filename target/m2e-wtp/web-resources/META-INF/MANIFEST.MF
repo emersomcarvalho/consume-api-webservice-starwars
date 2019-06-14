@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: projetodemo
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: emersom.carvalho
+Implementation-Vendor-Id: com.testesw.br
+Build-Jdk: 1.8.0_211
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/projetodemo
+Created-By: Maven Integration for Eclipse
+
