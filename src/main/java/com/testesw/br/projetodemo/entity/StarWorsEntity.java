@@ -1,8 +1,10 @@
 package com.testesw.br.projetodemo.entity;
 
+import org.springframework.data.annotation.Id;
 
 public class StarWorsEntity {
 
+	@Id
 	private String id;
 	private String nome;
 	//add clima e terreno

@@ -6,6 +6,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -18,7 +19,7 @@ import com.testesw.br.projetodemo.repository.Repository;
 import com.testesw.br.projetodemo.service.SwapiService;
 
 @RestController
-@RequestMapping("/contato")
+@RequestMapping(value= "/contato")
 public class ApiWebService {
 	
 	@Autowired
@@ -41,14 +42,14 @@ public class ApiWebService {
     
     //add list
    	@GetMapping														
-    public List<StarWorsEntity> listar(){
+    public List<StarWorsEntity> planets(){
     	return repository.findAll();
     	}
    	
      // buscar por id
-     @RequestMapping("/{id}")				
-      public ResponseEntity<StarWorsEntity> search(@PathVariable Long id){
-       StarWorsEntity contact = repository.findBy(id);
+     @GetMapping("/{id}")				
+      public ResponseEntity<StarWorsEntity> search(@PathVariable long id){
+       StarWorsEntity contact = repository.findById(id);
         	
         	if ( contact == null) {
         		
@@ -57,10 +58,15 @@ public class ApiWebService {
         	
         	return ResponseEntity.ok(contact);
         }
-     
-  
-    }
-  
+     //delete id
+     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
+     public void delete(@PathVariable("id") Long id) { 
+        repository.deleteById(id);
+    	
+    	
+     	
+     }
+}
 
 
 
