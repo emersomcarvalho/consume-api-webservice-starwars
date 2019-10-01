@@ -11,8 +11,6 @@ Teste local:http://localhost:8080/planets/{}
 
 STAR WARS API
 
-Para possibilitar a equipe de front criar essa aplicação, queremos desenvolver uma API que contenha os dados dos planetas. Requisitos:
-
 A API deve ser REST
 
 Para cada planeta, os seguintes dados devem ser obtidos do banco de dados da aplicação, sendo inserido manualmente:
